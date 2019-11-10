@@ -1,0 +1,69 @@
+{
+  "name": "tddjest",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "lint": "ng lint",
+    "sonar": "sonar-scanner"
+  },
+  "private": true,
+  "jest": {
+    "preset": "jest-preset-angular",
+    "testResultsProcessor": "jest-sonar-reporter",
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupJest.ts"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/dist/",
+      "<rootDir>/src/test.ts"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "<rootDir>/tsconfig.spec.json",
+        "stringifyContentPathRegex": "\\.html$",
+        "astTransformers": [
+          "<rootDir>/node_modules/jest-preset-angular/InlineHtmlStripStylesTransformer"
+        ]
+      }
+    }
+  },
+  "jestSonar": {
+    "reportPath": "reports",
+    "reportFile": "test-reporter.xml",
+    "indent": 4
+  },
+  "dependencies": {
+    "@angular/animations": "~8.2.0",
+    "@angular/common": "~8.2.0",
+    "@angular/compiler": "~8.2.0",
+    "@angular/core": "~8.2.0",
+    "@angular/forms": "~8.2.0",
+    "@angular/platform-browser": "~8.2.0",
+    "@angular/platform-browser-dynamic": "~8.2.0",
+    "@angular/router": "~8.2.0",
+    "rxjs": "~6.4.0",
+    "tslib": "^1.10.0",
+    "zone.js": "~0.9.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.802.0",
+    "@angular/cli": "~8.2.0",
+    "@angular/compiler-cli": "~8.2.0",
+    "@angular/language-service": "~8.2.0",
+    "@types/jest": "^24.0.15",
+    "@types/node": "~8.9.4",
+    "codelyzer": "^5.0.0",
+    "jest": "^24.8.0",
+    "jest-preset-angular": "^7.1.1",
+    "jest-sonar-reporter": "^2.0.0",
+    "sonar-scanner": "^3.1.0",
+    "ts-node": "~7.0.0",
+    "tslint": "~5.15.0",
+    "typescript": "~3.5.3"
+  }
+}
